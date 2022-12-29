@@ -14,7 +14,8 @@ void user() {
 	cout << "2. stop - закончить ввод элементов" << endl;
 	cout << "3.print - вывести в порядке возрастания  " << endl;
 	cout << "3. print_b вывести сбалансированую строку" << endl;
-	cout << "4. exit - выход" << endl;
+	cout << "4. find - поиск значения" << endl;
+	cout << "5. exit - выход" << endl;
 	while (ch != "exit") {
 		cout <<"Введите команду:  ";
 		cin >> ch;
@@ -42,6 +43,15 @@ void user() {
 
 			tree.BFS(root);
 		}
+		else if (ch == "find") {
+
+			cout << "Введите значение, которое хотите найти: ";
+			float x;
+			cin >> x;
+			cout << endl;
+			tree.find_value(root, x);
+			cout << endl;
+		}
 	}
 }
 
@@ -58,6 +68,7 @@ void admin() {
 
 	tree.BFS(root);
 	tree.DFS(root);
+	tree.find_value(root, 31);
 }
 
 int main()

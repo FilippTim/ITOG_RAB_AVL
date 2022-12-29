@@ -116,6 +116,23 @@ private:
 
 public:
 
+	void find_value(node* root, float value) {
+
+		if (root) {
+
+			if (value < root->value) {
+				find_value(root->left, value);
+			}
+			else if (value > root->value) {
+				find_value(root->right, value);
+			}
+			else if (value == root->value) {
+				cout << "Значение " << value << " найдено" << endl;
+			}
+		}
+		else { cout << "Значение " << value << " не найдено" << endl; }
+	}
+
 	void insert(node* (&root), float value) override {
 
 		if (root == NULL) {
